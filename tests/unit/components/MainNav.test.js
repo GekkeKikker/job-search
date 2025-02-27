@@ -1,8 +1,8 @@
 import { render, screen } from "@testing-library/vue";
-import userEvent from "@testing-library/user-event";
+import { describe, it, expect } from "vitest";
 
 import MainNav from "@/components/MainNav.vue";
-import { describe, it, expect } from "vitest";
+import userEvent from "@testing-library/user-event";
 
 describe("MainNav", () => {
   it("displays company name", () => {
@@ -26,7 +26,13 @@ describe("MainNav", () => {
   });
   describe("when the user logs in", () => {
     it("displays user profile picture", async () => {
-      render(MainNav);
+      render(MainNav, {
+        global: {
+          stubs: {
+            FontAwesomeIcon: true,
+          },
+        },
+      });
 
       let profileImage = screen.queryByRole("img", {
         name: /user profile image/i,
