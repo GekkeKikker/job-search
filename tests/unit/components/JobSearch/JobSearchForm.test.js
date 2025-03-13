@@ -33,7 +33,7 @@ describe("JobSearchForm", () => {
 
       expect(push).toHaveBeenCalledWith({
         name: "JobResults",
-        query: { role: "Vue Developer", location: "Dallas" },
+        query: { role: "Vue aDeveloper", location: "Dallas" },
       });
     });
   });
