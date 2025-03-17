@@ -3,7 +3,6 @@ import { describe, it, expect, vi } from "vitest";
 import userEvent from "@testing-library/user-event";
 
 import JobSearchForm from "@/components/JobSearch/JobSearchForm.vue";
-import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 
 describe("JobSearchForm", () => {
   describe("when user submits form", () => {
@@ -33,7 +32,7 @@ describe("JobSearchForm", () => {
 
       expect(push).toHaveBeenCalledWith({
         name: "JobResults",
-        query: { role: "Vue aDeveloper", location: "Dallas" },
+        query: { role: "Vue Developer", location: "Dallas" },
       });
     });
   });
