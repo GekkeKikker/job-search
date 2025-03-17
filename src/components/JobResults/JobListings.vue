@@ -1,31 +1,31 @@
 <template>
   <main class="flex-auto bg-brand-gray-2 p-8">
     <ol>
-      <li class="mb-7">
-        <router-link
-          to="/jobs/results/1"
-          class="mx-auto block rounded border border-solid border-brand-gray-2 bg-white hover:shadow-gray"
-        >
-          <div class="mx-8 border-b border-solid border-brand-gray-2 pt-5 pb-2">
-            <h2 class="mb-2 text-2xl">Technical Program Manager, Perception, Augmented Reality</h2>
-
-            <div class="flex flex-row align-middle">
-              <div class="mr-5">
-                <span>Bobo</span>
-              </div>
-              <div>
-                <span>San Fransico, CA, USA</span>
-              </div>
-            </div>
-          </div>
-        </router-link>
-      </li>
+      <job-listing />
+      <job-listing />
+      <job-listing />
     </ol>
   </main>
 </template>
 
 <script>
+import axios from "axios";
+import JobListing from "@/components/JobResults/JobListing.vue";
+
 export default {
   name: "JobListings",
+  components: {
+    JobListing,
+  },
+  data() {
+    return {
+      jobs: [],
+    };
+  },
+  mounted() {
+    axios.get("http://localhost:3000/jobs").then((response) => {
+      this.jobs = response.data;
+    });
+  },
 };
 </script>

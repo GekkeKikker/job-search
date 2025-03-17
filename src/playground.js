@@ -1,14 +1,8 @@
-const numbers = [1, 2, 3, 4, 5];
-const names = ["BOBBY", "SALLY", "DEBBIE"];
+// const axios = require("axios");
+import axios from "axios";
 
-// an array of squares
-// [1, 4, 9, 16, 25]
+const url = "http://localhost:3000/jobs/1";
 
-const squares = numbers.map((number) => number * number);
-
-const lowerCaseNames = names.map((name) => {
-  return name.toLocaleLowerCase();
+axios.get(url).then((response) => {
+  console.log(response.data);
 });
-
-console.log(squares);
-console.log(lowerCaseNames);
