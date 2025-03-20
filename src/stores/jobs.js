@@ -1,12 +1,16 @@
 import { defineStore } from "pinia";
+import getJobs from "@/api/getJobs";
+
+export const FETCH_JOBS = "FETCH_JOBS";
 
 export const useJobsStore = defineStore("jobs", {
   state: () => ({
-    isLoggedIn: false,
+    jobs: [],
   }),
   actions: {
-    loginUser() {
-      this.isLoggedIn = true;
+    async [FETCH_JOBS]() {
+      const jobs = await getJobs();
+      this.jobs = jobs;
     },
   },
 });

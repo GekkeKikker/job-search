@@ -30,8 +30,10 @@
 </template>
 
 <script>
-import { mapActions, mapState } from "pinia";
+import { mapState, mapActions } from "pinia";
+
 import { useUserStore } from "@/stores/user";
+
 import ActionButton from "@/components/Shared/ActionButton.vue";
 import ProfileImage from "@/components/Navigation/ProfileImage.vue";
 import TheSubNav from "@/components/Navigation/TheSubNav.vue";
@@ -63,9 +65,9 @@ export default {
         "h-32": this.isLoggedIn,
       };
     },
-    methods: {
-      ...mapActions(useUserStore, ["loginUser"]),
-    },
+  },
+  methods: {
+    ...mapActions(useUserStore, ["loginUser"]),
   },
 };
 </script>
