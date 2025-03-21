@@ -48,7 +48,7 @@ export default {
   data() {
     return {
       menuItems: [
-        { text: "Themes", url: "/" },
+        { text: "Teams", url: "/teams" },
         { text: "Locations", url: "/" },
         { text: "Life at Bobo Corp", url: "/" },
         { text: "How we hire", url: "/" },
