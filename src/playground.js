@@ -1,8 +1,7 @@
-// const axios = require("axios");
-import axios from "axios";
+const numbers = new Set();
 
-const url = "http://localhost:3000/jobs/1";
+numbers.add(5);
+numbers.add(10);
+numbers.add(15);
 
-axios.get(url).then((response) => {
-  console.log(response.data);
-});
+console.log(numbers);
