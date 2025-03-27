@@ -5,7 +5,7 @@
         <ul class="flex flex-row flex-wrap">
           <li v-for="value in uniqueValues" :key="value" class="h-8 w-1/2">
             <input
-              id="jobType"
+              id="value"
               v-model="selectedValues"
               :value="value"
               type="checkbox"
